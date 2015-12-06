@@ -197,6 +197,49 @@ const (
 	HeaderTagDistTag
 	HeaderTagOldSuggestsName
 
+	HeaderTagOldSuggestsVersion
+	HeaderTagOldSuggestsFlags
+	HeaderTagOldEnhancesName
+
+	HeaderTagOldEnhancesVersion
+	HeaderTagOldEnhancesFlags
+	HeaderTagPriority
+	HeaderTagCVSID
+
+	HeaderTagBlinkPkgID
+	HeaderTagBlinkHdrID
+	HeaderTagBlinkNEVRA
+	HeaderTagFlinkPkgID
+	HeaderTagFlinkHdrID
+	HeaderTagFlinkNEVRA
+	HeaderTagPackageOrigin
+	HeaderTagTriggerPreInstall
+	HeaderTagBuildSuggests
+	HeaderTagBuildEnhances
+	HeaderTagScriptStates
+	HeaderTagScriptMetrics
+	HeaderTagBuildCPUClock
+	HeaderTagFileDigestAlgos
+	HeaderTagVariants
+	HeaderTagXMajor
+	HeaderTagXMinor
+	HeaderTagRepoTag
+	HeaderTagKeywords
+	HeaderTagBuildPlatforms
+	HeaderTagPackageColor
+	HeaderTagPackagePrefColor
+	HeaderTagXAttrsDict
+	HeaderTagFileXAttrsX
+	HeaderTagDepAttrsDict
+	HeaderTagConflictAttrsX
+	HeaderTagObsoleteAttrsX
+	HeaderTagProvideAttrsX
+	HeaderTagRequireAttrsX
+	HeaderTagBuildProvides
+	HeaderTagBuildObsoletes
+	HeaderTagDBInstance
+	HeaderTagNVRA
+
 	HeaderTagN = HeaderTagName
 	HeaderTagV = HeaderTagVersion
 	HeaderTagR = HeaderTagRelease
@@ -213,4 +256,8 @@ const (
 	HeaderTagO         = HeaderTagObsoleteName
 
 	HeaderTagOldSuggests = HeaderTagOldSuggestsName
+
+	HeaderTagOldEnhances = HeaderTagOldEnhancesName
+
+	HeaderTagSVNID = HeaderTagCVSID
 )
