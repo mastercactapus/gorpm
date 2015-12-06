@@ -1,15 +1,8 @@
 package rpm
 
-type SignatureTag int32
-type HeaderTag int32
+//go:generate stringer -type HeaderTag
 
-// HEADER_IMAGE 		61
-// HEADER_SIGNATURES 	62
-// HEADER_IMMUTABLE 	63
-// HEADER_REGIONS 		64
-// HEADER_I18NTABLE 	100
-// HEADER_SIGBASE 		256
-// HEADER_TAGBASE 		1000
+type HeaderTag int32
 
 const (
 	HeaderTagNotFound         HeaderTag = -1
@@ -43,7 +36,7 @@ const (
 )
 
 const (
-	HeaderTagName = iota + 1000
+	HeaderTagName HeaderTag = iota + 1000
 	HeaderTagVersion
 	HeaderTagRelease
 	HeaderTagEpoch
@@ -261,3 +254,110 @@ const (
 
 	HeaderTagSVNID = HeaderTagCVSID
 )
+
+const (
+	HeaderTagFileNames HeaderTag = iota + 5000
+	HeaderTagFileProvide
+	HeaderTagFileRequire
+	HeaderTagFsNames
+	HeaderTagFsSizes
+	HeaderTagTriggerConds
+	HeaderTagTriggerType
+	HeaderTagOrigFileNames
+	HeaderTagLongFileSizes
+	HeaderTagLongSize
+	HeaderTagFileCaps
+	HeaderTagFileDigestAlgo
+	HeaderTagBugURL
+	HeaderTagEVR
+	HeaderTagNVR
+	HeaderTagNEVR
+	HeaderTagNEVRA
+	HeaderTagHeaderColor
+	HeaderTagVerbose
+	HeaderTagEpochNum
+	HeaderTagPreInstallFlags
+	HeaderTagPostInstallFlags
+	HeaderTagPreUninstallFlags
+	HeaderTagPostUninstallFlags
+	HeaderTagPreTransFlags
+	HeaderTagPostTransFlags
+	HeaderTagVerifyScriptFlags
+	HeaderTagTriggerScriptFlags
+	HeaderTagCollections
+	HeaderTagPolicyNames
+	HeaderTagPolicyTypes
+	HeaderTagPolicyTypesIndexes
+	HeaderTagPolicyFlags
+	HeaderTagVCS
+	HeaderTagOrderName
+	HeaderTagOrderVersion
+	HeaderTagOrderFlags
+	HeaderTagMSSFManifest
+	HeaderTagMSSFDomain
+	HeaderTagInstallFileNames
+	HeaderTagRequireNEVRs
+	HeaderTagProvideNEVRs
+	HeaderTagObsoleteNEVRs
+	HeaderTagConflictNEVRs
+	HeaderTagFileNLinks
+	HeaderTagRecommendName
+
+	HeaderTagRecommendVersion
+	HeaderTagRecommendFlags
+	HeaderTagSuggestName
+
+	HeaderTagSuggestVersion
+	HeaderTagSuggestFlags
+	HeaderTagSupplementName
+
+	HeaderTagSupplementVersion
+	HeaderTagSupplementFlags
+	HeaderTagEnhanceName
+
+	HeaderTagEnhanceVersion
+	HeaderTagEnhanceFlags
+	HeaderTagRecommendNEVRs
+	HeaderTagSuggestNEVRs
+	HeaderTagEnhanceNEVRs
+	HeaderTagEncoding
+	HeaderTagFileTriggerInstall
+	HeaderTagFileTriggerUninstall
+	HeaderTagFileTriggerPostUninstall
+	HeaderTagFileTriggerScripts
+	HeaderTagFileTriggerScriptProg
+	HeaderTagFileTriggerScriptFlags
+	HeaderTagFileTriggerName
+	HeaderTagFileTriggerIndex
+	HeaderTagFileTriggerVersion
+	HeaderTagFileTriggerFlags
+	HeaderTagTransFileTriggerInstall
+	HeaderTagTransFileTriggerUninstall
+	HeaderTagTransFileTriggerPostUninstall
+	HeaderTagTransFileTriggerScripts
+	HeaderTagTransFileTriggerScriptProg
+	HeaderTagTransFileTriggerScriptFlags
+	HeaderTagTransFileTriggerName
+	HeaderTagTransFileTriggerIndex
+	HeaderTagTransFileTriggerVersion
+	HeaderTagTransFileTriggerFlags
+	HeaderTagRemovePathPostFixes
+	HeaderTagFileTriggerPriorities
+	HeaderTagTransFileTriggerPriorities
+	HeaderTagFileTriggerConds
+	HeaderTagFileTriggerType
+	HeaderTagTransFileTriggerConds
+	HeaderTagTransFileTriggerType
+	HeaderTagFileSignatures
+	HeaderTagFileSignatureLength
+
+	HeaderTagRecommends = HeaderTagRecommendName
+
+	HeaderTagSuggests = HeaderTagSuggestName
+
+	HeaderTagSupplements = HeaderTagSupplementName
+
+	HeaderTagEnhances = HeaderTagEnhanceName
+)
+
+const HeaderTagExternalTag HeaderTag = 1000000

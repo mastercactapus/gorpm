@@ -15,6 +15,7 @@ func TestLead_UnmarshalBinary(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	assert.EqualValues(t, 3, l.Major, ".Major")
 	assert.EqualValues(t, 0, l.Minor, ".Minor")
 	assert.Equal(t, "LeadTypeBinary", l.Type.String(), ".Type")
@@ -23,4 +24,18 @@ func TestLead_UnmarshalBinary(t *testing.T) {
 	assert.Equal(t, "LeadOSLinux", l.OS.String(), ".OS")
 	assert.Equal(t, "LeadSignatureTypeHeaderSignature", l.SignatureType.String(), ".SignatureType")
 	assert.EqualValues(t, reserved, l.Reserved[:], ".Reserved")
+
+	err = l.UnmarshalBinary(testSrcLead)
+	if err != nil {
+		t.Fatal(err)
+	}
+	assert.EqualValues(t, 3, l.Major, ".Major")
+	assert.EqualValues(t, 0, l.Minor, ".Minor")
+	assert.Equal(t, "LeadTypeSource", l.Type.String(), ".Type")
+	assert.Equal(t, "LeadArchNoarch", l.Arch.String(), ".Arch")
+	assert.Equal(t, "letsencrypt-0.1.0-2.fc24", l.GetName(), ".GetName()")
+	assert.Equal(t, "LeadOSLinux", l.OS.String(), ".OS")
+	assert.Equal(t, "LeadSignatureTypeHeaderSignature", l.SignatureType.String(), ".SignatureType")
+	assert.EqualValues(t, reserved, l.Reserved[:], ".Reserved")
+
 }
