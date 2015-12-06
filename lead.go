@@ -34,56 +34,54 @@ const (
 )
 
 const (
-	LeadTypeBinary LeadType = iota // 0
-	LeadTypeSource                 // 1
+	LeadTypeBinary LeadType = 0
+	LeadTypeSource LeadType = 1
 )
 
 const (
-	_                     LeadArch = iota
-	LeadArchI386_x86_64            // 1
-	LeadArchAlpha_Sparc64          // 2
-	LeadArchSparc                  // 3
-	LeadArchMIPS                   // 4
-	LeadArchPowerPC                // 5
-	LeadArch68000                  // 6
-	LeadArchSGI                    // 7
-	LeadArchRS6000                 // 8
-	LeadArchIA64                   // 9
-	LeadArchSparc64                // 10
-	LeadArchMIPSel                 // 11
-	LeadArchARM                    // 12
-	LeadArchMiNT                   // 13
-	LeadArchS_390                  // 14
-	LeadArchS_390x                 // 15
-	LeadArchPowerPC64              // 16
-	LeadArchSuperH                 // 17
-	LeadArchXtensa                 // 18
+	LeadArchI386_x86_64   LeadArch = 1
+	LeadArchAlpha_Sparc64 LeadArch = 2
+	LeadArchSparc         LeadArch = 3
+	LeadArchMIPS          LeadArch = 4
+	LeadArchPowerPC       LeadArch = 5
+	LeadArch68000         LeadArch = 6
+	LeadArchSGI           LeadArch = 7
+	LeadArchRS6000        LeadArch = 8
+	LeadArchIA64          LeadArch = 9
+	LeadArchSparc64       LeadArch = 10
+	LeadArchMIPSel        LeadArch = 11
+	LeadArchARM           LeadArch = 12
+	LeadArchMiNT          LeadArch = 13
+	LeadArchS_390         LeadArch = 14
+	LeadArchS_390x        LeadArch = 15
+	LeadArchPowerPC64     LeadArch = 16
+	LeadArchSuperH        LeadArch = 17
+	LeadArchXtensa        LeadArch = 18
 	LeadArchNoarch        LeadArch = 255
 )
 
 const (
-	_             LeadOS = iota
-	LeadOSLinux          // 1
-	LeadOSIrix           // 2
-	LeadOSSolaris        // 3
-	LeadOSSunOS          // 4
-	AmigaOS              // 5
-	HP_UX                // 6
-	OSF1                 // 7
-	FreeBSD              // 8
-	SCO_SV               // 9
-	Irix64               // 10
-	NextStep             // 11
-	BSD_OS               // 12
-	machten              // 13
-	CYGWIN32_NT          // 14
-	CYGWIN32_95          // 15
-	UNIX_SV              // 16
-	MiNT                 // 17
-	OS_390               // 18
-	VM_ESA               // 19
-	Linux_390            // 20
-	Darwin               //	21
+	LeadOSLinux   LeadOS = 1
+	LeadOSIrix    LeadOS = 2
+	LeadOSSolaris LeadOS = 3
+	LeadOSSunOS   LeadOS = 4
+	AmigaOS       LeadOS = 5
+	HP_UX         LeadOS = 6
+	OSF1          LeadOS = 7
+	FreeBSD       LeadOS = 8
+	SCO_SV        LeadOS = 9
+	Irix64        LeadOS = 10
+	NextStep      LeadOS = 11
+	BSD_OS        LeadOS = 12
+	machten       LeadOS = 13
+	CYGWIN32_NT   LeadOS = 14
+	CYGWIN32_95   LeadOS = 15
+	UNIX_SV       LeadOS = 16
+	MiNT          LeadOS = 17
+	OS_390        LeadOS = 18
+	VM_ESA        LeadOS = 19
+	Linux_390     LeadOS = 20
+	Darwin        LeadOS = 21
 )
 
 func (l *Lead) UnmarshalBinary(p []byte) error {
